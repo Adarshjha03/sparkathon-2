@@ -6,7 +6,7 @@ import {
   Text,
   Image,
 } from "@chakra-ui/react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { GoPlus } from "react-icons/go";
 import { CiHeart } from "react-icons/ci";
@@ -35,6 +35,29 @@ const Products1 = () => {
     { img: primeMangoImg, title: "Prime - Mango Energy Drink 500ml", price: 99 },
   ];
 
+  // State to track the quantity of each product
+  const [quantities, setQuantities] = useState({});
+
+  const handleAddClick = (index, price) => {
+    setQuantities((prev) => ({
+      ...prev,
+      [index]: (prev[index] || 0) + 1,
+    }));
+    counter();
+    calculatePrice(price);
+  };
+
+  const handleRemoveClick = (index, price) => {
+    if (quantities[index] > 0) {
+      setQuantities((prev) => ({
+        ...prev,
+        [index]: prev[index] - 1,
+      }));
+      counter();
+      calculatePrice(-price);
+    }
+  };
+
   return (
     <Box width="100%">
       <Flex width="100%" flexWrap="wrap" justifyContent="space-between" mt={5}>
@@ -62,18 +85,37 @@ const Products1 = () => {
               <Text>
                 {product.title}
               </Text>
-              <Button
-                border="1px solid black"
-                borderRadius={20}
-                bg="white"
-                onClick={() => {
-                  counter();
-                  calculatePrice(product.price);
-                }}
-              >
-                <GoPlus />
-                Add
-              </Button>
+              {quantities[index] > 0 ? (
+                <Flex alignItems="center">
+                  <Button
+                    border="1px solid black"
+                    borderRadius={20}
+                    bg="white"
+                    onClick={() => handleRemoveClick(index, product.price)}
+                  >
+                    -
+                  </Button>
+                  <Text mx={2}>{quantities[index]}</Text>
+                  <Button
+                    border="1px solid black"
+                    borderRadius={20}
+                    bg="white"
+                    onClick={() => handleAddClick(index, product.price)}
+                  >
+                    +
+                  </Button>
+                </Flex>
+              ) : (
+                <Button
+                  border="1px solid black"
+                  borderRadius={20}
+                  bg="white"
+                  onClick={() => handleAddClick(index, product.price)}
+                >
+                  <GoPlus />
+                  Add
+                </Button>
+              )}
             </Box>
           </Box>
         ))}

@@ -183,13 +183,13 @@ export const Checkout = () => {
                 </Box>
                 <Box>
                   <Text fontSize={13} className="rotobo-regular">
-                    Sponcered
+                    Sponsored
                   </Text>
                   <Flex fontSize={20} alignItems={"center"}>
                     <Box>$16.99</Box>
                   </Flex>
                   <Text>
-                    Electric sever for Men <br /> Women,for in Rechargeable...
+                   Talcum Powder
                   </Text>
                   <Button
                     border={"1px solid black"}
@@ -246,11 +246,11 @@ export const Checkout = () => {
               </Button>
             
           </Box>
-          <Box mt={5}>
+          {/* <Box mt={5}>
             <Text textAlign={"center"}>
               For the best sh0pping experience <u>sign in</u>{" "}
             </Text>
-          </Box>
+          </Box> */}
           <br />
           <hr />
           <Box>
@@ -263,7 +263,7 @@ export const Checkout = () => {
               </Box>
               <Box>
                 <Text className="roboto-bold" color="green">
-                  ${totalPrice}
+                  Rs. {totalPrice}
                 </Text>
               </Box>
             </Box>
@@ -273,7 +273,7 @@ export const Checkout = () => {
               </Box>
               <Box>
                 <Text className="roboto-bold" color="green">
-                  $0.00
+                  Rs 0.00
                 </Text>
               </Box>
             </Box>
@@ -281,7 +281,7 @@ export const Checkout = () => {
               <Box></Box>
               <Box>
                 <Text className="roboto-bold" color="green">
-                  $0.00
+                  Rs. 0.00
                 </Text>
               </Box>
             </Box>
@@ -290,16 +290,16 @@ export const Checkout = () => {
           <hr />
           <Box display={"flex"} justifyContent={"space-between"}>
             <Box>
-              <Text>Shipping (below $35 minium)</Text>
+              <Text>Shipping (Quick Delivery)</Text>
             </Box>
             <Box>
-              <Text>$0.00</Text>
+              <Text>Rs. 50.0</Text>
             </Box>
           </Box>
           <br />
           <Box display={"flex"} justifyContent={"space-between"}>
             <Box>
-              <Text className="roboto-bold">Texes</Text>
+              <Text className="roboto-bold">Taxes</Text>
             </Box>
             <Box>
               <Text>Calculated at checkout</Text>
@@ -313,7 +313,9 @@ export const Checkout = () => {
             </Box>
             <Box>
               <Text className="roboto-bold" color="green">
-                ${totalPrice}
+              <Text className="roboto-bold" color="green">
+                Rs. {totalPrice + 50}
+              </Text>
               </Text>
             </Box>
           </Box>
