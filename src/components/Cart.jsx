@@ -131,7 +131,7 @@ export const Cart = () => {
               <Box display={"flex"} alignItems={"center"} p={5}>
                 <Image src="https://i5.walmartimages.com/dfw/63fd9f59-1b5e/5452ae02-a31f-4ef1-9a45-62ac0b06c13b/v1/mci-shipping.svg" />
                 <Text fontSize={20} ml={5} className="roboto-bold">
-                  Shipping, arrives by Tue, Mar 5 <br /> <u>95829</u>
+                  Shipping, arrives by Today, Aug 16 <br /> <u>495006</u>
                 </Text>
               </Box>
             </Box>
@@ -141,7 +141,7 @@ export const Cart = () => {
                   <Image src={item.image} alt={item.name} boxSize="100px" objectFit="cover" mr={4} />
                   <Box flex={1}>
                     <Text fontWeight="bold">{item.name}</Text>
-                    <Text>Sold by <u>Your Local Seller: Dave</u></Text>
+                    <Text>Sold by <u>Your Local Seller: Gunjan</u></Text>
                     <Text className="roboto-bold">Fulfilled by Walmart</Text>
                   </Box>
                   <Box textAlign="right">

@@ -11,6 +11,7 @@ import { Checkout } from "./Checkout";
 import SearchProduct from "./SearchProduct";
 import { ProductDetails } from "./ProductDetails";
 import Login from "../form/Login";
+import { Trackorder } from "./trackOrder";
 
 
 export const Allroutes = () => {
@@ -29,6 +30,7 @@ export const Allroutes = () => {
         <Route path="/product/checkout" element={<Checkout/>}/>
         <Route path={`/product/:id`} element={<SearchProduct/>}/>
         <Route path={"/product/details"} element={<ProductDetails/>}/>
+        <Route path={"/track-order"} element={<Trackorder/>}/>
       </Routes>
     </>
   );
